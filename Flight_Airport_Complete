@@ -33,7 +33,7 @@ public class Airport {
         System.out.println("Flight_ID Duration Meal_Available");
         for(Flight f : FlightArray)
         {
-        System.out.println(f.FlightId+"       "+f.duration+"       "+f.Meal_Available4);
+        System.out.println(f.FlightId+"        "+f.duration+"       "+f.Meal_Available4);
         }
         
         System.out.println("--------------------------------------------------------");
