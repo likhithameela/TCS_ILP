@@ -1,0 +1,145 @@
+import java.util.*;
+
+public class Airport {
+    private static Scanner sc;
+
+	public static void main(String[] args) {
+    
+        
+        Flight[] flts = new Flight[3];
+        
+        sc = new Scanner(System.in);
+        
+        for(int i = 0;i<3;i++)
+        {
+        	System.out.print("enter flight ID: ");
+            String FlightId = sc.nextLine();
+            System.out.print("enter departure: ");
+            String Departure_From = sc.nextLine();
+            System.out.print("enter arrival: ");
+            String Arrival_To = sc.nextLine();
+            System.out.print("enter duration: ");
+            double duration = sc.nextDouble();sc.nextLine();
+            System.out.print("enter if meals available: ");
+            boolean Meal_available = sc.nextBoolean();sc.nextLine();
+
+            flts[i] = new Flight(FlightId,Departure_From,Arrival_To,duration,Meal_available);
+        }
+        String dep_from = sc.nextLine();
+        String arv_to = sc.nextLine();
+        
+        Flight[] FlightArray = SearchFlight(flts);
+        
+        System.out.println("Flight_ID Duration Meal_Available");
+        for(Flight f : FlightArray)
+        {
+        System.out.println(f.FlightId+"       "+f.duration+"       "+f.Meal_Available4);
+        }
+        
+        System.out.println("--------------------------------------------------------");
+        
+        System.out.println("Flight_ID Dep  Arv   Duration");
+        
+            
+        Flight[] FltDetl = GetFlightDetails(flts,dep_from,arv_to);
+
+        
+        for(Flight f : FltDetl)
+        {
+        System.out.println(f.getFlightId()+"      "+f.getDeparture_From()+"  "+f.getArrival_To()+"    "+ f.getDuration());
+        }
+    }
+    
+    public static Flight[] SearchFlight(Flight[] F)
+    {
+        int i = 0;
+        String FlightId, Departure_From,Arrival_To;
+        double duration;
+        boolean Meal_Available;
+        Flight[] selFlight = new Flight[3];
+        
+        for(Flight f:F)
+        {
+            if((f.getDuration() > 2)&&(f.getMeal_Available()))
+            {
+                FlightId = f.getFlightId();
+                Departure_From = f.getDeparture_From();
+                Arrival_To = f.getArrival_To();
+                duration = f.getDuration();
+                Meal_Available = f.getMeal_Available();
+                selFlight[i] = new Flight(FlightId,Departure_From,Arrival_To,duration,Meal_Available);
+                i=i+1;
+            }
+            else
+            {continue;}
+        }
+        return selFlight;
+    }
+    
+    public static Flight[] GetFlightDetails(Flight[] f,String dep,String arv)
+    {
+        int i = 0;
+        String FlightId, Departure_From,Arrival_To;
+        double duration;
+        boolean Meal_available;
+        Flight[] selFlight = new Flight[3];
+        //implement method 
+        for(Flight fl :f )
+        {
+            if(fl.getDeparture_From()== dep && fl.getArrival_To() == arv)
+            {
+                FlightId = fl.getFlightId();
+                Departure_From = fl.getDeparture_From();
+                Arrival_To = fl.getArrival_To();
+                duration = fl.getDuration();
+                Meal_available = fl.getMeal_Available();
+                selFlight[i] = new Flight(FlightId,Departure_From,Arrival_To,duration,Meal_available);
+            }
+        }
+        Arrays.sort(selFlight);
+        return selFlight;
+    }
+}
+
+class Flight
+{
+	 String FlightId, Departure_From,Arrival_To;
+     double duration;
+     boolean Meal_Available;
+
+    public Flight(String flightId, String departureFrom, String arrivalTo, double duration, boolean mealAvailable)
+    {
+        this.FlightId = flightId;
+        this.Departure_From = departureFrom;
+        this.Arrival_To = arrivalTo;
+        this.duration = duration;
+        this.Meal_Available = mealAvailable;
+    }
+
+    public void setFlightId(String flightId)
+    {
+        this.FlightId = flightId;
+    }
+    public void setDepartureFrom(String departureFrom)
+    {
+        this.Departure_From = departureFrom;
+    }
+    public void setArrivalTo(String arrivalTo)
+    {
+        this.Arrival_To = arrivalTo;
+    }
+    public void setDuration(double duration) {
+        this.duration = duration;
+    }
+    public void setMealAvailable(boolean mealAvailable)
+    {
+        this.Meal_Available = mealAvailable;
+    }
+    
+    public String getFlightId(){return FlightId;}
+    public String getDeparture_From(){return Departure_From;}
+    public String getArrival_To(){return Arrival_To;}
+    public double getDuration(){return duration;}
+    public boolean getMeal_Available(){return Meal_Available;}
+
+}
