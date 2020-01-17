@@ -1,0 +1,219 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+         Scanner sc = new Scanner(System.in);
+          int flag = sc.nextInt();
+        if(flag==1){
+        Point p = new Point();
+        System.out.println("object created with default constructor");
+        p = new Point(3,2);
+        System.out.println("object created with parameterized constructor");
+        }else{
+            Point p = new Point();
+        System.out.println("object created with default constructor");
+        p = new Point(3,2);
+        System.out.println("object created with parameterized constructor");
+        System.out.println(p.getXCoordinate());
+        System.out.println(p.getYCoordinate());
+        p.setXCoordinate(22);
+        p.setYCoordinate(23);
+        System.out.println(p.getXCoordinate());
+        System.out.println(p.getYCoordinate());
+        System.out.println("getters setters defined as expected");
+        }
+    }
+}
+class Point{
+    double xCoordinate;
+    double yCoordinate;
+    Point(){
+        super();
+    }
+    Point(double xCoordinate, double yCoordinate){
+        this.xCoordinate = xCoordinate;
+        this.yCoordinate = yCoordinate;
+    }
+   public void setXCoordinate(double xCoordinate){
+       this.xCoordinate = xCoordinate;
+   }
+   public double getXCoordinate(){
+       return xCoordinate;
+   }
+   public void setYCoordinate(double yCoordinate){
+       this.yCoordinate = yCoordinate;
+   }
+   public double getYCoordinate(){
+       return yCoordinate;
+   }
+}
+=======================
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class PointDemo {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+         Scanner sc = new Scanner(System.in);
+          int flag = sc.nextInt();
+        //Average Testcase
+        if(flag==1){
+            Point p1 = new Point(3,2);
+            Point p2 = new Point(6,6);
+        
+             double d = PointDemo.findDistance(p1, p2);
+              System.out.println(d);
+        }else{//High Testcase
+            Point p1 = new Point(3,2);
+            Point p2 = new Point(6,6);
+        
+            double d = PointDemo.findDistance(p1, p2);
+           System.out.println(d);
+        
+           d = PointDemo.findDistance(null,null);
+        
+           if(d == 0) System.out.println("ok");
+        
+           d = PointDemo.findDistance(p1,null);
+        
+           if(d == 0) System.out.println("ok");
+        
+            d = PointDemo.findDistance(null,p2);
+        
+            if(d == 0) System.out.println("ok");
+        
+        }
+    }
+
+    public static double findDistance(Point p1, Point p2){
+        if(p1 == null || p2 == null){
+            return 0;
+        }
+        else 
+         return Math.sqrt((p1.getxCoordinate()-p2.getxCoordinate()) * (p1.getxCoordinate()-p2.getxCoordinate()) + (p1.getyCoordinate()-p2.getyCoordinate()) * (p1.getyCoordinate()-p2.getyCoordinate()));
+        
+    }
+ }
+
+class Point{
+    double xCoordinate;
+    double yCoordinate;
+
+    Point(double xCoordinate, double yCoordinate){
+        this.xCoordinate = xCoordinate;
+        this.yCoordinate = yCoordinate;
+    }
+   public void setxCoordinate(double xCoordinate){
+       this.xCoordinate = xCoordinate;
+   }
+   public double getxCoordinate(){
+       return xCoordinate;
+   }
+   public void setyCoordinate(double yCoordinate){
+       this.yCoordinate = yCoordinate;
+   }
+   public double getyCoordinate(){
+       return yCoordinate;
+   }
+}
+=====================
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class CreditCardCompany {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+         Scanner sc = new Scanner(System.in);
+          int flag = sc.nextInt();
+        if(flag==1){//Average Test case
+           Customer c1 = new Customer(123, 10124, 200);
+        Customer c2 = new Customer(333, 10125, 200.35);
+        
+        CreditCardCompany ccCompany = new CreditCardCompany();
+        
+        double payback = ccCompany.getPaybackAmount(c1);        
+        System.out.println("Customer Id:"+c1.getCustId()+"\tAccount Id:"+c1.getAccountId()+"\tCredit Card Charges:"+c1.getCreditCardCharges()+"\tPayback amount:"+payback);
+        
+        payback = ccCompany.getPaybackAmount(c2);
+        System.out.println("\nCustomer Id:"+c2.getCustId()+"\tAccount Id:"+c2.getAccountId()+"\tCredit Card Charges:"+c2.getCreditCardCharges()+"\tPayback amount:"+payback);
+        }else{//High Test Case
+            
+        Customer c1 = new Customer(123, 10124, 200);
+        Customer c2 = new Customer(333, 10125, 200.35);
+        
+        CreditCardCompany ccCompany = new CreditCardCompany();
+        
+        double payback = ccCompany.getPaybackAmount(c1);        
+        System.out.println("Customer Id:"+c1.getCustId()+"\tAccount Id:"+c1.getAccountId()+"\tCredit Card Charges:"+c1.getCreditCardCharges()+"\tPayback amount:"+payback);
+        
+        payback = ccCompany.getPaybackAmount(c2);
+        System.out.println("\nCustomer Id:"+c2.getCustId()+"\tAccount Id:"+c2.getAccountId()+"\tCredit Card Charges:"+c2.getCreditCardCharges()+"\tPayback amount:"+payback);
+        }
+    }
+    
+  public double getPaybackAmount(Customer c){
+      double charges=c.getCreditCardCharges(),payback=0;
+        if(charges<=500){
+            payback=charges*0.0025;
+            
+        }else{
+            if(charges>500 && charges<=1500){
+                charges=charges-500;
+                payback=(charges*0.005)+(500*0.0025);
+                
+            }else if(charges>1500 && charges<=2500){
+                charges=charges-1500;
+                payback=(charges*0.0075)+(1000*0.005)+(500*0.0025);
+                
+            }else if(charges>2500){
+                charges-=2500;
+                payback=(charges*0.01)+(500*0.0025)+(1000*0.005)+(1000*0.0075);
+                
+            }
+        }
+        return payback;
+    }
+  }  //Implement method here
+
+class Customer {
+    //Implement constructor/getters/setters
+    
+    int custId;
+    int accountId;
+    double creditCardCharges;
+    public Customer(int custId, int accountId, double creditCardCharges) {
+        super();
+        this.custId = custId;
+        this.accountId = accountId;
+        this.creditCardCharges = creditCardCharges;
+    }
+    public int getCustId() {
+        return custId;
+    }
+    public void setCustId(int custId) {
+        this.custId = custId;
+    }
+    public int getAccountId() {
+        return accountId;
+    }
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
+    }
+    public double getCreditCardCharges() {
+        return creditCardCharges;
+    }
+    public void setCreditCardCharges(double creditCardCharges) {
+        this.creditCardCharges = creditCardCharges;
+    }    
+}
