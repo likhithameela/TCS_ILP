@@ -30,68 +30,80 @@ public class Solution {
     for(Book b:newBooks)
              System.out.println(b.getId());
     }
-    public static Book[] booksWithPriceRange(double minPrice, double maxPrice, Book[] books){
-        Book[] b = new Book[4];
-        int i =0;
-        for(Book k : books){
-            int id = k.getId();
-            String title = k.getTitle();
-            String author = k.getAuthor();
-            double price = k.getPrice();
-            if((k.getPrice()>=minPrice) && (k.getPrice()<=maxPrice)){
-                b[i] = new Book(id,title,author,price);
-                Book temp;
-                for(int j =0;j<b.length;j++){
-                    if(b[j].getId() > b[j+1].getId()){
-                        temp = b[j];
-                        b[j] = b[j+1];
-                        b[j+1] = temp;
-                    }
-                }
-              // return b;
+    
+  public static Book[] booksWithPriceRange(double min, double max, Book[] books) {
+        int c = 0, c1 = -1;
+        Book[] b1 = new Book[books.length];
+
+        for (int i = 0; i < books.length; i++) {
+            if ((books[i].getPrice()) > min && (books[i].getPrice()) < max) {
+                c++;
             }
         }
+        Book[] b = new Book[c];
+        for (int i = 0; i < books.length; i++) {
+            if (books[i].getPrice() > min && books[i].getPrice() < max) {
+                c1++;
+                b[c1] = books[i];
+            }
+        }
+        for (int j = 0; j < b.length - 1; j++) {
+            for (int i = 0; i < b.length - 1; i++) {
+                if ((b[i].getId()) > (b[i + 1].getId())) {
+                    b1[i] = b[i];
+                    b[i] = b[i + 1];
+                    b[i + 1] = b1[i];
+                }
+            }
+        }
+
         return b;
-    }
-    //return b;
-    //implement business methods here
+    }  //implement business methods here
 }
 
 class Book
 {
-  int id;
-String title;
-String author;
-double price;
-Book(int id, String title, String author, double price) {
-   // super();
-    this.id = id;
-    this.title = title;
-    this.author = author;
-    this.price = price;
-}
-public int getId() {
-    return id;
-}
-public void setId(int id) {
-    this.id = id;
-}
-public String getTitle() {
-    return title;
-}
-public void setTitle(String title) {
-    this.title = title;
-}
-public String getAuthor() {
-    return author;
-}
-public void setAuthor(String author) {
-    this.author = author;
-}
-public double getPrice() {
-    return price;
-}
-public void setPrice(double price) {
-    this.price = price;
-}  //implement class here
+    private int id;
+    private String title;
+    private String author;
+    private double price;
+
+    public Book(int id, String title, String author, double price) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.price = price;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setId(int a) {
+        id = a;
+    }
+
+    public void setTitle(String a) {
+        title = a;
+    }
+
+    public void setAuthor(String a) {
+        author = a;
+    }
+
+    public void setPrice(double a) {
+        price = a;
+    }//implement class here
 }
