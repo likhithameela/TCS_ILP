@@ -1,0 +1,290 @@
+SQL> alter table books set bid primary key;
+alter table books set bid primary key
+                      *
+ERROR at line 1:
+ORA-02000: missing UNUSED keyword
+
+
+SQL> alter table books modify bid number(10) primary key;
+
+Table altered.
+
+SQL> desc books;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ BID                                       NOT NULL NUMBER(10)
+ BNAME                                              VARCHAR2(10)
+ AUTHOR                                             VARCHAR2(10)
+ PRICE                                              NUMBER(10)
+
+SQL> alter table publisher add bid number(10) foreign key refernces books;
+alter table publisher add bid number(10) foreign key refernces books
+                                         *
+ERROR at line 1:
+ORA-01735: invalid ALTER TABLE option
+
+
+SQL> alter table publisher add bid number(10)foreign key reference books;
+alter table publisher add bid number(10)foreign key reference books
+                                        *
+ERROR at line 1:
+ORA-01735: invalid ALTER TABLE option
+
+
+SQL>  alter table publisher add bid number(10);
+
+Table altered.
+
+SQL> desc publisher;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PID                                                NUMBER(5)
+ PNAME                                              VARCHAR2(10)
+ BID                                                NUMBER(10)
+
+SQL> alter table publisher modify bid number(10) foreign key references books bid number(10);
+alter table publisher modify bid number(10) foreign key references books bid number(10)
+                                            *
+ERROR at line 1:
+ORA-01735: invalid ALTER TABLE option
+
+
+SQL> drop table publisher;
+
+Table dropped.
+
+SQL> create table publisher(pid number(5), pname varchar(10), bid number(10) foriegn key references books(bid number(10));
+create table publisher(pid number(5), pname varchar(10), bid number(10) foriegn key references books(bid number(10))
+                                                                        *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL>  create table publisher(pid number(5), pname varchar(10), bid number(10) foreign key references books(bid number(10)));
+ create table publisher(pid number(5), pname varchar(10), bid number(10) foreign key references books(bid number(10)))
+                                                                         *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table publisher(pid number(5), pname varchar(10), bid number(10) foreign key books(bid number(10)));
+create table publisher(pid number(5), pname varchar(10), bid number(10) foreign key books(bid number(10)))
+                                                                        *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL>  create table publisher(pid number(5) primary key, pname varchar(10), bid number(10) constraint fk foreign key references books(bid));
+ create table publisher(pid number(5) primary key, pname varchar(10), bid number(10) constraint fk foreign key references books(bid))
+                                                                                     *
+ERROR at line 1:
+ORA-02253: constraint specification not allowed here
+
+
+SQL> create table publisher(pid number(5) primary key, pname varchar(10), bid number(10)foreign key references books(bid));
+create table publisher(pid number(5) primary key, pname varchar(10), bid number(10)foreign key references books(bid))
+                                                                                   *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table publisher(pid number(5) primary key, pname varchar(10), bid number(10) fk foreign key references books(bid));
+create table publisher(pid number(5) primary key, pname varchar(10), bid number(10) fk foreign key references books(bid))
+                                                                                    *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table publisher(pid number(5) primary key, pname varchar(10), bid number(5), foreign key (bid) 
+references books(bid));
+
+Table created.
+
+SQL> select * from books;
+
+       BID BNAME      AUTHOR          PRICE
+---------- ---------- ---------- ----------
+       123 C          Yeswant           345
+       234 DBMS       Paddu             456
+       345 Java       Arnav             567
+
+SQL> insert into publisher values(321,'padmaja',123);
+
+1 row created.
+
+SQL> insert into publisher values(432,'likki',234);
+
+1 row created.
+
+SQL> insert into publisher values(543,'srujana',345);
+
+1 row created.
+
+SQL> select * from publisher;
+
+       PID PNAME             BID
+---------- ---------- ----------
+       321 padmaja           123
+       432 likki             234
+       543 srujana           345
+
+SQL> update publisher set pname='TNWpublishers' where pid = 543;
+update publisher set pname='TNWpublishers' where pid = 543
+                           *
+ERROR at line 1:
+ORA-12899: value too large for column "ORAUSER7"."PUBLISHER"."PNAME" (actual:
+13, maximum: 10)
+
+
+SQL> alter table publisher modify pname varchar(15);
+
+Table altered.
+
+SQL> update publisher set pname='TNWpublishers' where pid = 543;
+
+1 row updated.
+
+SQL> select * from publisher;
+
+       PID PNAME                  BID
+---------- --------------- ----------
+       321 padmaja                123
+       432 likki                  234
+       543 TNWpublishers          345
+
+SQL> select bname,price from b.books where b.bid = p.bid;
+select bname,price from b.books where b.bid = p.bid
+                          *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+alter table tablename rename column oldname to newname;
+
+
+SQL> select bname,price frombooks where b.bid = p.bid;
+select bname,price frombooks where b.bid = p.bid
+                             *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL>
+SQL> select bname,price from books where b.bid = p.bid;
+select bname,price from books where b.bid = p.bid
+                                            *
+ERROR at line 1:
+ORA-00904: "P"."BID": invalid identifier
+
+
+SQL> select bname,price,bid from books, publisher where b.bid = p.bid;
+select bname,price,bid from books, publisher where b.bid = p.bid
+                                                           *
+ERROR at line 1:
+ORA-00904: "P"."BID": invalid identifier
+
+
+SQL> select bname,price,bid from books, publisher where p.pname = 'TNWpublisher';
+select bname,price,bid from books, publisher where p.pname = 'TNWpublisher'
+                                                   *
+ERROR at line 1:
+ORA-00904: "P"."PNAME": invalid identifier
+select books.bname, publisher.pid from books,publisher where books.bid = publisher.bid and publisher.pname = 'TNWpublishers';
+
+BNAME             PID
+---------- ----------
+Java              543
+
+alter table tablename add foreign key(id) references firsttable_column(id);  
+
+SQL> select books.bname, publisher.pid from books,publisher where books.bid = publisher.bid and publisher.pname = 'TNWpublisher';
+
+no rows selected
+
+SQL> select books.bname, publisher.pid from books,publisher where books.bid = publisher.bid and publisher.pname = 'TNWpublishers';
+
+BNAME             PID
+---------- ----------
+Java              543
+
+SQL> ^C
+
+SQL> desc books;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ BID                                       NOT NULL NUMBER(10)
+ BNAME                                              VARCHAR2(10)
+ AUTHOR                                             VARCHAR2(10)
+ PRICE                                              NUMBER(10)
+
+SQL> desc publisher;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PID                                       NOT NULL NUMBER(5)
+ PNAME                                              VARCHAR2(15)
+ BID                                                NUMBER(5)
+
+SQL> select books.bname,price publisher.pid from books,publisher where books.bid = publisher.bid and publisher.pname = 'TNWpublishers';
+select books.bname,price publisher.pid from books,publisher where books.bid = publisher.bid and publisher.pname = 'TNWpublishers'
+                                  *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select books.bname,books.price from books where books.bid = publisher.bid and publisher.pname = 'TNWpublishers';
+select books.bname,books.price from books where books.bid = publisher.bid and publisher.pname = 'TNWpublishers'
+                                                                              *
+ERROR at line 1:
+ORA-00904: "PUBLISHER"."PNAME": invalid identifier
+
+
+SQL> select books.bname,books.price from books, publisher where books.bid = publisher.bid and publisher.pname = 'TNWpublishers';
+
+BNAME           PRICE
+---------- ----------
+Java              567
+
+SQL> date
+SP2-0042: unknown command "date" - rest of line ignored.
+SQL> select bname,bid,pname from books,publisher where books.bid = publisher.bid and bname = null;
+select bname,bid,pname from books,publisher where books.bid = publisher.bid and bname = null
+             *
+ERROR at line 1:
+ORA-00918: column ambiguously defined
+
+
+SQL> select bname,bid,pname from books,publisher where books.bid = publisher.bid and books.bname = null;
+select bname,bid,pname from books,publisher where books.bid = publisher.bid and books.bname = null
+             *
+ERROR at line 1:
+ORA-00918: column ambiguously defined
+
+
+SQL> select books.bname,books.bid,publisher.pid from books,publisher where books.bid = publisher.bid and books.bname = null;
+
+no rows selected
+
+SQL> insert into books values(856,' ','LOL',892);
+
+1 row created.
+
+SQL> select books.bname,books.bid,publisher.pid from books,publisher where books.bid = publisher.bid and books.bname = null;
+
+no rows selected
+
+SQL> insert into publisher values(067,'ROFL',856);
+
+1 row created.
+
+SQL> select books.bname,books.bid,publisher.pid from books,publisher where books.bid = publisher.bid and books.bname = null;
+
+no rows selected
+
+SQL> select books.bname,books.bid,publisher.pid from books,publisher where books.bid = publisher.bid and books.bname = ' ';
+
+BNAME             BID        PID
+---------- ---------- ----------
+                  856         67
+
+SQL> select books.bname,books.bid,publisher.pid from books,publisher where books.bid = publisher.bid and books.bname = NULL;
+
+no rows selected
