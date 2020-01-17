@@ -1,0 +1,994 @@
+login as: u1819302
+Access denied
+u1819302@172.25.192.93's password:
+[u1819302@inhydilpunix ~]$ ls
+[u1819302@inhydilpunix ~]$ pwd
+/home/u1819302
+[u1819302@inhydilpunix ~]$ mkdir sample
+[u1819302@inhydilpunix ~]$ ls
+sample
+[u1819302@inhydilpunix ~]$ ls -a
+.  ..  .bash_logout  .bash_profile  .bashrc  .cache  .config  .mozilla  sample
+[u1819302@inhydilpunix ~]$ ls -l
+total 0
+drwxr-xr-x. 2 u1819302 xplore 6 Jan  7 12:05 sample
+[u1819302@inhydilpunix ~]$ mkdir demo
+[u1819302@inhydilpunix ~]$ ls
+demo  sample
+[u1819302@inhydilpunix ~]$ %cd demo
+-bash: fg: %cd: no such job
+[u1819302@inhydilpunix ~]$ %cd sample
+-bash: fg: %cd: no such job
+[u1819302@inhydilpunix ~]$ cd sample
+[u1819302@inhydilpunix sample]$ cd demo
+-bash: cd: demo: No such file or directory
+[u1819302@inhydilpunix sample]$ pwd
+/home/u1819302/sample
+[u1819302@inhydilpunix sample]$ cd demo
+-bash: cd: demo: No such file or directory
+[u1819302@inhydilpunix sample]$ mkdir demo
+[u1819302@inhydilpunix sample]$ cd demo
+[u1819302@inhydilpunix demo]$ ls
+[u1819302@inhydilpunix demo]$ pwd
+/home/u1819302/sample/demo
+[u1819302@inhydilpunix demo]$ mkdir test
+[u1819302@inhydilpunix demo]$ ls
+test
+[u1819302@inhydilpunix demo]$ rmdir test
+[u1819302@inhydilpunix demo]$ ls
+[u1819302@inhydilpunix demo]$ cat abc.txt
+cat: abc.txt: No such file or directory
+[u1819302@inhydilpunix demo]$ vi abc.txt
+[u1819302@inhydilpunix demo]$ ls
+[u1819302@inhydilpunix demo]$ touch xyz.txt
+[u1819302@inhydilpunix demo]$ ls
+xyz.txt
+[u1819302@inhydilpunix demo]$ touch abc.txt
+[u1819302@inhydilpunix demo]$ ls
+abc.txt  xyz.txt
+[u1819302@inhydilpunix demo]$ cat xyz
+cat: xyz: No such file or directory
+[u1819302@inhydilpunix demo]$ cat xyz.txt
+[u1819302@inhydilpunix demo]$ vi xyz.txt
+[u1819302@inhydilpunix demo]$ cat xyz
+cat: xyz: No such file or directory
+[u1819302@inhydilpunix demo]$ cat xyz.txt
+HELLO WELCOME TO TCS
+
+[u1819302@inhydilpunix demo]$ vi abc.txt
+[u1819302@inhydilpunix demo]$ cat abc.txt
+UNIX PROGRAMMING
+
+[u1819302@inhydilpunix demo]$ cp xyz.txt abc.txt
+[u1819302@inhydilpunix demo]$ cat abc.txt
+HELLO WELCOME TO TCS
+
+[u1819302@inhydilpunix demo]$ cat xyz.txt
+HELLO WELCOME TO TCS
+
+[u1819302@inhydilpunix demo]$ mv abc.txt xyz.txt
+[u1819302@inhydilpunix demo]$ cat xyz.txt
+HELLO WELCOME TO TCS
+
+[u1819302@inhydilpunix demo]$ cat abc.txt
+cat: abc.txt: No such file or directory
+[u1819302@inhydilpunix demo]$ vi num.sh
+[u1819302@inhydilpunix demo]$ cat num.sh
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+
+
+
+
+
+
+
+[u1819302@inhydilpunix demo]$ head num.sh
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+[u1819302@inhydilpunix demo]$ tail num.sh
+8
+9
+0
+
+
+
+
+
+
+
+[u1819302@inhydilpunix demo]$
+[u1819302@inhydilpunix demo]$ ^C
+[u1819302@inhydilpunix demo]$ ls - l
+ls: cannot access -: No such file or directory
+ls: cannot access l: No such file or directory
+[u1819302@inhydilpunix demo]$ ls -l
+total 8
+-rw-r--r--. 1 u1819302 xplore 27 Jan  7 12:34 num.sh
+-rw-r--r--. 1 u1819302 xplore 22 Jan  7 12:32 xyz.txt
+[u1819302@inhydilpunix demo]$ mkdir office
+[u1819302@inhydilpunix demo]$ pwd
+/home/u1819302/sample/demo
+[u1819302@inhydilpunix demo]$ cd office
+[u1819302@inhydilpunix office]$ ls
+[u1819302@inhydilpunix office]$ pwd
+/home/u1819302/sample/demo/office
+[u1819302@inhydilpunix office]$ ..
+[u1819302@inhydilpunix office]$ \
+> .
+-bash: .: filename argument required
+.: usage: . filename [arguments]
+[u1819302@inhydilpunix office]$ rmdir office
+rmdir: failed to remove âofficeâ: No such file or directory
+[u1819302@inhydilpunix office]$ ls
+[u1819302@inhydilpunix office]$ cd ..
+[u1819302@inhydilpunix demo]$ cd ..
+[u1819302@inhydilpunix sample]$ cd ..
+[u1819302@inhydilpunix ~]$ mkdir office
+[u1819302@inhydilpunix ~]$ pwd
+/home/u1819302
+[u1819302@inhydilpunix ~]$ cd office
+[u1819302@inhydilpunix office]$ pwd
+/home/u1819302/office
+[u1819302@inhydilpunix office]$ mkdir admin
+[u1819302@inhydilpunix office]$ cd admin
+[u1819302@inhydilpunix admin]$ mkdir bms
+[u1819302@inhydilpunix admin]$ cd bms
+[u1819302@inhydilpunix bms]$ pwd
+/home/u1819302/office/admin/bms
+[u1819302@inhydilpunix bms]$ cd ..
+[u1819302@inhydilpunix admin]$ mkdir tms
+[u1819302@inhydilpunix admin]$ pwd
+/home/u1819302/office/admin
+[u1819302@inhydilpunix admin]$ cd tms
+[u1819302@inhydilpunix tms]$ pwd
+/home/u1819302/office/admin/tms
+[u1819302@inhydilpunix tms]$ cd ..
+[u1819302@inhydilpunix admin]$ cd ..
+[u1819302@inhydilpunix office]$ mkdir hr
+[u1819302@inhydilpunix office]$ cd hr
+[u1819302@inhydilpunix hr]$ pwd
+/home/u1819302/office/hr
+[u1819302@inhydilpunix hr]$ cd ..
+[u1819302@inhydilpunix office]$ pwd
+/home/u1819302/office
+[u1819302@inhydilpunix office]$ mkdir finance
+[u1819302@inhydilpunix office]$ cd finance
+[u1819302@inhydilpunix finance]$ pwd
+/home/u1819302/office/finance
+[u1819302@inhydilpunix finance]$ mkdir bills
+[u1819302@inhydilpunix finance]$ cd bills
+[u1819302@inhydilpunix bills]$ pwd
+/home/u1819302/office/finance/bills
+[u1819302@inhydilpunix bills]$ cd ..
+[u1819302@inhydilpunix finance]$ pwd
+/home/u1819302/office/finance
+[u1819302@inhydilpunix finance]$ mkdir payroll
+[u1819302@inhydilpunix finance]$ cd payroll
+[u1819302@inhydilpunix payroll]$ pwd
+/home/u1819302/office/finance/payroll
+[u1819302@inhydilpunix payroll]$
+[u1819302@inhydilpunix payroll]$ cd ..
+[u1819302@inhydilpunix finance]$ cd ..
+[u1819302@inhydilpunix office]$ cd ..
+[u1819302@inhydilpunix ~]$ pwd
+/home/u1819302
+[u1819302@inhydilpunix ~]$ sys date
+bash: sys: command not found...
+[u1819302@inhydilpunix ~]$ sysdate
+bash: sysdate: command not found...
+[u1819302@inhydilpunix ~]$ date
+Tue Jan  7 17:17:51 IST 2020
+[u1819302@inhydilpunix ~]$
+
+[u1819302@inhydilpunix ~]$ touch file1.txt
+[u1819302@inhydilpunix ~]$ vi file1.txt
+[u1819302@inhydilpunix ~]$ cat file1.txt
+[u1819302@inhydilpunix ~]$ touch file2.txt
+[u1819302@inhydilpunix ~]$ touch file3.txt
+[u1819302@inhydilpunix ~]$ cd office
+[u1819302@inhydilpunix office]$ cd hr
+[u1819302@inhydilpunix hr]$ pwd
+/home/u1819302/office/hr
+[u1819302@inhydilpunix hr]$ touch file1.txt
+[u1819302@inhydilpunix hr]$ mv file1.txt hrfile.txt
+[u1819302@inhydilpunix hr]$ ls
+hrfile.txt
+[u1819302@inhydilpunix hr]$ cd ..
+[u1819302@inhydilpunix office]$ cd finance
+[u1819302@inhydilpunix finance]$ cd bills
+[u1819302@inhydilpunix bills]$ ls
+[u1819302@inhydilpunix bills]$ pwd
+/home/u1819302/office/finance/bills
+[u1819302@inhydilpunix bills]$ touch file2.txt file3.txt
+u1819181 pts/262      2020-01-07 16:57 (172.25.197.133)
+[u1819302@inhydilpunix ~]$ who am i
+u1819302 pts/128      2020-01-08 08:48 (172.25.197.157)
+[u1819302@inhydilpunix ~]$ cd office
+[u1819302@inhydilpunix office]$ cd admin
+[u1819302@inhydilpunix admin]$ pwd
+/home/u1819302/office/admin
+[u1819302@inhydilpunix admin]$ touch sample.txt
+[u1819302@inhydilpunix admin]$ cd ..
+[u1819302@inhydilpunix office]$ cd ..
+[u1819302@inhydilpunix ~]$ cd office
+[u1819302@inhydilpunix office]$ cmp sample.txt hrfile.txt
+cmp: sample.txt: No such file or directory
+[u1819302@inhydilpunix office]$ cmp admin/sample.txt hr/hrfile.txt
+[u1819302@inhydilpunix office]$ cd admin
+[u1819302@inhydilpunix admin]$ vi sample.txt
+[u1819302@inhydilpunix admin]$ cd ..
+[u1819302@inhydilpunix office]$ cd hr
+[u1819302@inhydilpunix hr]$ vi hrfile.txt
+[u1819302@inhydilpunix hr]$ cd ..
+[u1819302@inhydilpunix office]$ cd hr
+[u1819302@inhydilpunix hr]$ vi hrfile.txt
+[u1819302@inhydilpunix hr]$ cd ..
+[u1819302@inhydilpunix office]$ cd admin
+[u1819302@inhydilpunix admin]$ vi sample.txt
+[u1819302@inhydilpunix admin]$ cd ..
+[u1819302@inhydilpunix office]$ cmp admin/sample.txt hr/hrfile.txt
+admin/sample.txt hr/hrfile.txt differ: byte 5, line 1
+[u1819302@inhydilpunix office]$ comm admin/sample.txt hr/hrfile.txt
+        THIS
+comm: file 2 is not in sorted order
+        IS
+        HR
+        FILE
+THIS
+comm: file 1 is not in sorted order
+IS
+SAMPLE
+FILE
+[u1819302@inhydilpunix office]$ cd admin
+[u1819302@inhydilpunix admin]$ vi sample.txt
+[u1819302@inhydilpunix admin]$ cd ..
+[u1819302@inhydilpunix office]$ cd hr
+[u1819302@inhydilpunix hr]$ vi hrfile.txt
+[u1819302@inhydilpunix hr]$ cd ..
+[u1819302@inhydilpunix office]$ comm admin/sample.txt hr/hrfile.txt
+                THIS
+                IS
+        HR
+comm: file 2 is not in sorted order
+        FILE
+SAMPLE
+comm: file 1 is not in sorted order
+FILE
+[u1819302@inhydilpunix office]$ cd admin
+[u1819302@inhydilpunix admin]$ grep sample.txt
+^Z
+[1]+  Stopped                 grep --color=auto sample.txt
+[u1819302@inhydilpunix admin]$ grep "this" sample.txt
+[u1819302@inhydilpunix admin]$ grep 'this' sample.txt
+[u1819302@inhydilpunix admin]$ grep this sample.txt
+[u1819302@inhydilpunix admin]$ grep THIS sample.txt
+THIS
+[u1819302@inhydilpunix admin]$ grep THIS sample.txt || count SAMPLE sample.txt
+THIS
+[u1819302@inhydilpunix admin]$ grep THIS sample.txt || count SAMPLE
+THIS
+[u1819302@inhydilpunix admin]$ grep THIS sample.txt || count
+THIS
+[u1819302@inhydilpunix admin]$ grep SAMPLE sample.txt || count
+SAMPLE
+[u1819302@inhydilpunix admin]$ grep SAMPLE sample.txt || count SAMPLE
+SAMPLE
+[u1819302@inhydilpunix admin]$ wc -l
+^Z
+[2]+  Stopped                 wc -l
+[u1819302@inhydilpunix admin]$ wc -l sample.txt
+4 sample.txt
+[u1819302@inhydilpunix admin]$ wc -l sample
+wc: sample: No such file or directory
+[u1819302@inhydilpunix admin]$ wc -l sample.txt
+4 sample.txt
+[u1819302@inhydilpunix admin]$ grep SAMPLE sample.txt || wc -l sample.txt
+SAMPLE
+[u1819302@inhydilpunix admin]$ wc sample.txt
+ 4  4 20 sample.txt
+[u1819302@inhydilpunix admin]$ wc -c sample.txt
+20 sample.txt
+[u1819302@inhydilpunix admin]$ grep -c sample sample.txt
+0
+[u1819302@inhydilpunix admin]$ grep -c SAMPLE sample.txt
+1
+[u1819302@inhydilpunix admin]$ cd ..
+[u1819302@inhydilpunix office]$ pwd
+/home/u1819302/office
+[u1819302@inhydilpunix office]$ find . -type f -empty
+./finance/bills/billpaid.txt
+./finance/bills/billdue.txt
+[u1819302@inhydilpunix office]$ find . -type f -empty -delete
+[u1819302@inhydilpunix office]$ ls
+admin  finance  hr
+[u1819302@inhydilpunix office]$ cd bills
+-bash: cd: bills: No such file or directory
+[u1819302@inhydilpunix office]$ cd finance
+[u1819302@inhydilpunix finance]$ cd bills
+[u1819302@inhydilpunix bills]$ ls
+[u1819302@inhydilpunix bills]$ cd ..
+[u1819302@inhydilpunix finance]$ cd ..
+[u1819302@inhydilpunix office]$ cd admin
+[u1819302@inhydilpunix admin]$ ls
+bms  sample.txt  tms
+[u1819302@inhydilpunix admin]$ cd bms
+[u1819302@inhydilpunix bms]$ cd ..
+[u1819302@inhydilpunix admin]$ cd ..
+[u1819302@inhydilpunix office]$ ls
+admin  finance  hr
+[u1819302@inhydilpunix office]$ cd hr
+[u1819302@inhydilpunix hr]$ ls
+hrfile.txt
+[u1819302@inhydilpunix hr]$ cd ..
+[u1819302@inhydilpunix office]$ cd ..
+[u1819302@inhydilpunix ~]$ vi scores.txt
+[u1819302@inhydilpunix ~]$ cat scores.txt
+Roll No|Name|Score
+1|Raghu|80
+2|Hari|50
+3|Ram|80
+4|Asha|40
+5|Radha|60
+[u1819302@inhydilpunix ~]$ sort scores.txt
+1|Raghu|80
+2|Hari|50
+3|Ram|80
+4|Asha|40
+5|Radha|60
+Roll No|Name|Score
+[u1819302@inhydilpunix ~]$ vi scores.txt
+[u1819302@inhydilpunix ~]$ sort scores.txt
+1|Raghu|80
+2|Hari|50
+3|Ram|80
+4|Radha|60
+5|Asha|40
+Roll No|Name|Score
+[u1819302@inhydilpunix ~]$ cat scores.txt
+Roll No|Name|Score
+1|Raghu|80
+2|Hari|50
+3|Ram|80
+5|Asha|40
+4|Radha|60
+[u1819302@inhydilpunix ~]$ sort -k 3 scores.txt
+1|Raghu|80
+2|Hari|50
+3|Ram|80
+4|Radha|60
+5|Asha|40
+Roll No|Name|Score
+[u1819302@inhydilpunix ~]$ sort -k 3n scores.txt
+1|Raghu|80
+2|Hari|50
+3|Ram|80
+4|Radha|60
+5|Asha|40
+Roll No|Name|Score
+[u1819302@inhydilpunix ~]$ sort -k scores.txt
+sort: invalid number at field start: invalid count at start of âscores.txtâ
+[u1819302@inhydilpunix ~]$ sort -k3 scores.txt
+1|Raghu|80
+2|Hari|50
+3|Ram|80
+4|Radha|60
+5|Asha|40
+Roll No|Name|Score
+[u1819302@inhydilpunix ~]$ sort "-k3" scores.txt
+1|Raghu|80
+2|Hari|50
+3|Ram|80
+4|Radha|60
+5|Asha|40
+Roll No|Name|Score
+[u1819302@inhydilpunix ~]$ vi scores.txt
+[u1819302@inhydilpunix ~]$ sort "-k3" scores.txt
+4 Asha 40
+2 Hari 50
+5 Radha 60
+1 Raghu 80
+3 Ram 80
+Roll No Name Score
+[u1819302@inhydilpunix ~]$ sort "-nk3" scores.txt
+Roll No Name Score
+4 Asha 40
+2 Hari 50
+5 Radha 60
+1 Raghu 80
+3 Ram 80
+[u1819302@inhydilpunix ~]$ tail -3 scores.txt
+3 Ram 80
+4 Asha 40
+5 Radha 60
+[u1819302@inhydilpunix ~]$ sort "-nk3" scores.txt || tail -3 scores.txt
+Roll No Name Score
+4 Asha 40
+2 Hari 50
+5 Radha 60
+1 Raghu 80
+3 Ram 80
+[u1819302@inhydilpunix ~]$ sort "-nk3" scores.txt | tail -3
+5 Radha 60
+1 Raghu 80
+3 Ram 80
+[u1819302@inhydilpunix ~]$ sort -r -nk3 scores.txt | tail -3
+2 Hari 50
+4 Asha 40
+Roll No Name Score
+[u1819302@inhydilpunix ~]$ sort -r "-nk3" scores.txt | tail -3
+2 Hari 50
+4 Asha 40
+Roll No Name Score
+[u1819302@inhydilpunix ~]$ sort -r "-nk3" scores.txt | head -3
+3 Ram 80
+1 Raghu 80
+5 Radha 60
+
+[u1819302@inhydilpunix bills]$ ls
+file2.txt  file3.txt
+[u1819302@inhydilpunix bills]$ mv file2.txt billpaid.txt
+[u1819302@inhydilpunix bills]$ ls
+billpaid.txt  file3.txt
+[u1819302@inhydilpunix bills]$ mv file3.txt billdue.txt
+[u1819302@inhydilpunix bills]$ ls
+billdue.txt  billpaid.txt
+[u1819302@inhydilpunix bills]$ ls -l
+total 0
+-rw-r--r--. 1 u1819302 xplore 0 Jan  7 17:38 billdue.txt
+-rw-r--r--. 1 u1819302 xplore 0 Jan  7 17:38 billpaid.txt
+[u1819302@inhydilpunix bills]$ cd ..
+[u1819302@inhydilpunix finance]$ cd ..
+[u1819302@inhydilpunix office]$ cd ..
+[u1819302@inhydilpunix ~]$ cd office
+[u1819302@inhydilpunix office]$ cd admin
+[u1819302@inhydilpunix admin]$ pwd
+/home/u1819302/office/admin
+[u1819302@inhydilpunix admin]$ ls -l
+total 0
+drwxr-xr-x. 2 u1819302 xplore 6 Jan  7 17:14 bms
+drwxr-xr-x. 2 u1819302 xplore 6 Jan  7 17:14 tms
+[u1819302@inhydilpunix admin]$ chmod 777 admin
+chmod: cannot access âadminâ: No such file or directory
+[u1819302@inhydilpunix admin]$ cd ..
+[u1819302@inhydilpunix office]$ chmod 777 admin
+[u1819302@inhydilpunix office]$ ls -l
+total 0
+drwxrwxrwx. 4 u1819302 xplore 28 Jan  7 17:14 admin
+drwxr-xr-x. 4 u1819302 xplore 34 Jan  7 17:15 finance
+drwxr-xr-x. 2 u1819302 xplore 24 Jan  7 17:36 hr
+[u1819302@inhydilpunix office]$ chmod 050 admin
+[u1819302@inhydilpunix office]$ ls -l
+total 0
+d---r-x---. 4 u1819302 xplore 28 Jan  7 17:14 admin
+drwxr-xr-x. 4 u1819302 xplore 34 Jan  7 17:15 finance
+drwxr-xr-x. 2 u1819302 xplore 24 Jan  7 17:36 hr
+[u1819302@inhydilpunix office]$ chmod 004 admin
+[u1819302@inhydilpunix office]$ ls -l
+total 0
+d------r--. 4 u1819302 xplore 28 Jan  7 17:14 admin
+drwxr-xr-x. 4 u1819302 xplore 34 Jan  7 17:15 finance
+drwxr-xr-x. 2 u1819302 xplore 24 Jan  7 17:36 hr
+[u1819302@inhydilpunix office]$ chmod 754 admin
+[u1819302@inhydilpunix office]$ ls -l
+total 0
+drwxr-xr--. 4 u1819302 xplore 28 Jan  7 17:14 admin
+drwxr-xr-x. 4 u1819302 xplore 34 Jan  7 17:15 finance
+drwxr-xr-x. 2 u1819302 xplore 24 Jan  7 17:36 hr
+[u1819302@inhydilpunix office]$
+[u1819302@inhydilpunix office]$ cd hr
+[u1819302@inhydilpunix hr]$ pwd
+/home/u1819302/office/hr
+[u1819302@inhydilpunix hr]$ cp office/hr/hrfile.txt tempdir
+cp: cannot stat âoffice/hr/hrfile.txtâ: No such file or directory
+[u1819302@inhydilpunix hr]$ cd ..
+[u1819302@inhydilpunix office]$ cd ..
+[u1819302@inhydilpunix ~]$ pwd
+/home/u1819302
+[u1819302@inhydilpunix ~]$ cp office/hr/hrfile.txt tempdir
+[u1819302@inhydilpunix ~]$ ls
+demo  file1.txt  file2.txt  file3.txt  office  sample  tempdir
+[u1819302@inhydilpunix ~]$ cd tempdir
+-bash: cd: tempdir: Not a directory
+[u1819302@inhydilpunix ~]$ mkdir tempdir
+mkdir: cannot create directory âtempdirâ: File exists
+[u1819302@inhydilpunix ~]$ mkdir tempdir1
+[u1819302@inhydilpunix ~]$ cd tempdir1
+[u1819302@inhydilpunix tempdir1]$ ls
+[u1819302@inhydilpunix tempdir1]$ cp office/hr/hrfile.txt tempdir1
+cp: cannot stat âoffice/hr/hrfile.txtâ: No such file or directory
+[u1819302@inhydilpunix tempdir1]$ cd ..
+[u1819302@inhydilpunix ~]$ cp office/hr/hrfile.txt tempdir1
+[u1819302@inhydilpunix ~]$ ls
+demo       file2.txt  office  tempdir
+file1.txt  file3.txt  sample  tempdir1
+[u1819302@inhydilpunix ~]$ cd tempdir1
+[u1819302@inhydilpunix tempdir1]$ ls
+hrfile.txt
+[u1819302@inhydilpunix tempdir1]$
+[u1819302@inhydilpunix office]$ cd admin
+[u1819302@inhydilpunix admin]$ vi sample.txt
+[u1819302@inhydilpunix admin]$ cd ..
+[u1819302@inhydilpunix office]$ cd hr
+[u1819302@inhydilpunix hr]$ vi hrfile.txt
+[u1819302@inhydilpunix hr]$ cd ..
+[u1819302@inhydilpunix office]$ comm admin/sample.txt hr/hrfile.txt
+                THIS
+                IS
+        HR
+comm: file 2 is not in sorted order
+        FILE
+SAMPLE
+comm: file 1 is not in sorted order
+FILE
+[u1819302@inhydilpunix office]$ cd admin
+[u1819302@inhydilpunix admin]$ grep sample.txt
+^Z
+[1]+  Stopped                 grep --color=auto sample.txt
+[u1819302@inhydilpunix admin]$ grep "this" sample.txt
+[u1819302@inhydilpunix admin]$ grep 'this' sample.txt
+[u1819302@inhydilpunix admin]$ grep this sample.txt
+[u1819302@inhydilpunix admin]$ grep THIS sample.txt
+THIS
+[u1819302@inhydilpunix admin]$ grep THIS sample.txt || count SAMPLE sample.txt
+THIS
+[u1819302@inhydilpunix admin]$ grep THIS sample.txt || count SAMPLE
+THIS
+[u1819302@inhydilpunix admin]$ grep THIS sample.txt || count
+THIS
+[u1819302@inhydilpunix admin]$ grep SAMPLE sample.txt || count
+SAMPLE
+[u1819302@inhydilpunix admin]$ grep SAMPLE sample.txt || count SAMPLE
+SAMPLE
+[u1819302@inhydilpunix admin]$ wc -l
+^Z
+[2]+  Stopped                 wc -l
+[u1819302@inhydilpunix admin]$ wc -l sample.txt
+4 sample.txt
+[u1819302@inhydilpunix admin]$ wc -l sample
+wc: sample: No such file or directory
+[u1819302@inhydilpunix admin]$ wc -l sample.txt
+4 sample.txt
+[u1819302@inhydilpunix admin]$ grep SAMPLE sample.txt || wc -l sample.txt
+SAMPLE
+[u1819302@inhydilpunix admin]$ wc sample.txt
+ 4  4 20 sample.txt
+[u1819302@inhydilpunix admin]$ wc -c sample.txt
+20 sample.txt
+[u1819302@inhydilpunix admin]$ grep -c sample sample.txt
+0
+[u1819302@inhydilpunix admin]$ grep -c SAMPLE sample.txt
+1
+[u1819302@inhydilpunix admin]$ cd ..
+[u1819302@inhydilpunix office]$ pwd
+/home/u1819302/office
+[u1819302@inhydilpunix office]$ find . -type f -empty
+./finance/bills/billpaid.txt
+./finance/bills/billdue.txt
+[u1819302@inhydilpunix office]$ find . -type f -empty -delete
+[u1819302@inhydilpunix office]$ ls
+admin  finance  hr
+[u1819302@inhydilpunix office]$ cd bills
+-bash: cd: bills: No such file or directory
+[u1819302@inhydilpunix office]$ cd finance
+[u1819302@inhydilpunix finance]$ cd bills
+[u1819302@inhydilpunix bills]$ ls
+[u1819302@inhydilpunix bills]$ cd ..
+[u1819302@inhydilpunix finance]$ cd ..
+[u1819302@inhydilpunix office]$ cd admin
+[u1819302@inhydilpunix admin]$ ls
+bms  sample.txt  tms
+[u1819302@inhydilpunix admin]$ cd bms
+[u1819302@inhydilpunix bms]$ cd ..
+[u1819302@inhydilpunix admin]$ cd ..
+[u1819302@inhydilpunix office]$ ls
+admin  finance  hr
+[u1819302@inhydilpunix office]$ cd hr
+[u1819302@inhydilpunix hr]$ ls
+hrfile.txt
+[u1819302@inhydilpunix hr]$ cd ..
+[u1819302@inhydilpunix office]$ cd ..
+[u1819302@inhydilpunix ~]$ vi scores.txt
+[u1819302@inhydilpunix ~]$ cat scores.txt
+Roll No|Name|Score
+1|Raghu|80
+2|Hari|50
+3|Ram|80
+4|Asha|40
+5|Radha|60
+[u1819302@inhydilpunix ~]$ sort scores.txt
+1|Raghu|80
+2|Hari|50
+3|Ram|80
+4|Asha|40
+5|Radha|60
+Roll No|Name|Score
+[u1819302@inhydilpunix ~]$ vi scores.txt
+[u1819302@inhydilpunix ~]$ sort scores.txt
+1|Raghu|80
+2|Hari|50
+3|Ram|80
+4|Radha|60
+5|Asha|40
+Roll No|Name|Score
+[u1819302@inhydilpunix ~]$ cat scores.txt
+Roll No|Name|Score
+1|Raghu|80
+2|Hari|50
+3|Ram|80
+5|Asha|40
+4|Radha|60
+[u1819302@inhydilpunix ~]$ sort -k 3 scores.txt
+1|Raghu|80
+2|Hari|50
+3|Ram|80
+4|Radha|60
+5|Asha|40
+Roll No|Name|Score
+[u1819302@inhydilpunix ~]$ sort -k 3n scores.txt
+1|Raghu|80
+2|Hari|50
+3|Ram|80
+4|Radha|60
+5|Asha|40
+Roll No|Name|Score
+[u1819302@inhydilpunix ~]$ sort -k scores.txt
+sort: invalid number at field start: invalid count at start of âscores.txtâ
+[u1819302@inhydilpunix ~]$ sort -k3 scores.txt
+1|Raghu|80
+2|Hari|50
+3|Ram|80
+4|Radha|60
+5|Asha|40
+Roll No|Name|Score
+[u1819302@inhydilpunix ~]$ sort "-k3" scores.txt
+1|Raghu|80
+2|Hari|50
+3|Ram|80
+4|Radha|60
+5|Asha|40
+Roll No|Name|Score
+[u1819302@inhydilpunix ~]$ vi scores.txt
+[u1819302@inhydilpunix ~]$ sort "-k3" scores.txt
+4 Asha 40
+2 Hari 50
+5 Radha 60
+1 Raghu 80
+3 Ram 80
+Roll No Name Score
+[u1819302@inhydilpunix ~]$ sort "-nk3" scores.txt
+Roll No Name Score
+4 Asha 40
+2 Hari 50
+5 Radha 60
+1 Raghu 80
+3 Ram 80
+[u1819302@inhydilpunix ~]$ tail -3 scores.txt
+3 Ram 80
+4 Asha 40
+5 Radha 60
+[u1819302@inhydilpunix ~]$ sort "-nk3" scores.txt || tail -3 scores.txt
+Roll No Name Score
+4 Asha 40
+2 Hari 50
+5 Radha 60
+1 Raghu 80
+3 Ram 80
+[u1819302@inhydilpunix ~]$ sort "-nk3" scores.txt | tail -3
+5 Radha 60
+1 Raghu 80
+3 Ram 80
+[u1819302@inhydilpunix ~]$ sort -r -nk3 scores.txt | tail -3
+2 Hari 50
+4 Asha 40
+Roll No Name Score
+[u1819302@inhydilpunix ~]$ sort -r "-nk3" scores.txt | tail -3
+2 Hari 50
+4 Asha 40
+Roll No Name Score
+[u1819302@inhydilpunix ~]$ sort -r "-nk3" scores.txt | head -3
+3 Ram 80
+1 Raghu 80
+5 Radha 60
+[u1819302@inhydilpunix ~]$ ^C
+[u1819302@inhydilpunix ~]$ vi one.txt
+[u1819302@inhydilpunix ~]$ cd one.txt
+-bash: cd: one.txt: Not a directory
+[u1819302@inhydilpunix ~]$ cat one.txt
+qwertyuiop
+TCS is a company
+INFOSYS is a company
+[u1819302@inhydilpunix ~]$ vi two.txt
+[u1819302@inhydilpunix ~]$ cat two.txt
+asdfghjkl
+WIPRO is a company
+SYNTEL is a company
+[u1819302@inhydilpunix ~]$ grep company one.txt
+TCS is a company
+INFOSYS is a company
+[u1819302@inhydilpunix ~]$ grep company two.txt
+WIPRO is a company
+SYNTEL is a company
+[u1819302@inhydilpunix ~]$ grep company one.txt | wc company
+wc: company: No such file or directory
+[u1819302@inhydilpunix ~]$ grep company one.txt | wc one.txt
+ 3  9 49 one.txt
+[u1819302@inhydilpunix ~]$ grep company one.txt | wc two.txt
+ 3  9 49 two.txt
+[u1819302@inhydilpunix ~]$ grep company two.txt | wc two.txt
+ 3  9 49 two.txt
+[u1819302@inhydilpunix ~]$ grep company two.txt | wc
+      2       8      39
+[u1819302@inhydilpunix ~]$ grep company one.txt | wc
+      2       8      38
+[u1819302@inhydilpunix ~]$ ls *.txt
+file1.txt  file2.txt  file3.txt  one.txt  scores.txt  two.txt
+[u1819302@inhydilpunix ~]$
+[u1819302@inhydilpunix ~]$ vi scores.txt
+[u1819302@inhydilpunix ~]$ grep {print $1,$2} scores.txt
+grep: ,}: No such file or directory
+[u1819302@inhydilpunix ~]$ awk {print $1,$2} scores.txt
+awk: cmd. line:1: {print
+awk: cmd. line:1:       ^ unexpected newline or end of string
+[u1819302@inhydilpunix ~]$ awk {prints $1,$2} scores.txt
+awk: cmd. line:1: {prints
+awk: cmd. line:1:        ^ unexpected newline or end of string
+[u1819302@inhydilpunix ~]$ awk {print$1,$2} scores.txt
+awk: cmd. line:1: print
+awk: cmd. line:1: ^ syntax error
+[u1819302@inhydilpunix ~]$ awk {prints$1,$2} scores.txt
+[u1819302@inhydilpunix ~]$ awk '{print $1,$2}' scores.txt
+Roll No
+1 Raghu
+2 Hari
+3 Ram
+4 Asha
+5 Radha
+[u1819302@inhydilpunix ~]$
+[u1819302@inhydilpunix ~]$ vi scores.txt
+[u1819302@inhydilpunix ~]$ grep {print $1,$2} scores.txt
+grep: ,}: No such file or directory
+[u1819302@inhydilpunix ~]$ awk {print $1,$2} scores.txt
+awk: cmd. line:1: {print
+awk: cmd. line:1:       ^ unexpected newline or end of string
+[u1819302@inhydilpunix ~]$ awk {prints $1,$2} scores.txt
+awk: cmd. line:1: {prints
+awk: cmd. line:1:        ^ unexpected newline or end of string
+[u1819302@inhydilpunix ~]$ awk {print$1,$2} scores.txt
+awk: cmd. line:1: print
+awk: cmd. line:1: ^ syntax error
+[u1819302@inhydilpunix ~]$ awk {prints$1,$2} scores.txt
+[u1819302@inhydilpunix ~]$ awk '{print $1,$2}' scores.txt
+Roll No
+1 Raghu
+2 Hari
+3 Ram
+4 Asha
+5 Radha
+[u1819302@inhydilpunix ~]$ ^C
+[u1819302@inhydilpunix ~]$ awk '{print $1,$3}' scores.txt
+Roll Name
+1 80
+2 50
+3 80
+4 40
+5 60
+[u1819302@inhydilpunix ~]$ awk '{print $1,$2,$3}' scores.txt
+Roll No Name
+1 Raghu 80
+2 Hari 50
+3 Ram 80
+4 Asha 40
+5 Radha 60
+[u1819302@inhydilpunix ~]$ awk '{print}' scores.txt
+Roll No Name Score
+1 Raghu 80
+2 Hari 50
+3 Ram 80
+4 Asha 40
+5 Radha 60
+[u1819302@inhydilpunix ~]$ awk 'BEGIN{s=0}{s=s+3;}END{print s}' scores.txt
+18
+[u1819302@inhydilpunix ~]$ awk 'BEGIN{s=0}{s=s+$3;}END{print s}' scores.txt
+310
+[u1819302@inhydilpunix ~]$ awk '{print $1-$3}' scores.txt
+0
+-79
+-48
+-77
+-36
+-55
+[u1819302@inhydilpunix ~]$ awk 'BEGIN{s=0}{s=s+$3;}END{print s}' scores.txt
+310
+[u1819302@inhydilpunix ~]$ vi scores.txt
+[u1819302@inhydilpunix ~]$ grep {print $1,$2} scores.txt
+grep: ,}: No such file or directory
+[u1819302@inhydilpunix ~]$ awk {print $1,$2} scores.txt
+awk: cmd. line:1: {print
+awk: cmd. line:1:       ^ unexpected newline or end of string
+[u1819302@inhydilpunix ~]$ awk {prints $1,$2} scores.txt
+awk: cmd. line:1: {prints
+awk: cmd. line:1:        ^ unexpected newline or end of string
+[u1819302@inhydilpunix ~]$ awk {print$1,$2} scores.txt
+awk: cmd. line:1: print
+awk: cmd. line:1: ^ syntax error
+[u1819302@inhydilpunix ~]$ awk {prints$1,$2} scores.txt
+[u1819302@inhydilpunix ~]$ awk '{print $1,$2}' scores.txt
+Roll No
+1 Raghu
+2 Hari
+3 Ram
+4 Asha
+5 Radha
+[u1819302@inhydilpunix ~]$ ^C
+[u1819302@inhydilpunix ~]$ awk '{print $1,$3}' scores.txt
+Roll Name
+1 80
+2 50
+3 80
+4 40
+5 60
+[u1819302@inhydilpunix ~]$ awk '{print $1,$2,$3}' scores.txt
+Roll No Name
+1 Raghu 80
+2 Hari 50
+3 Ram 80
+4 Asha 40
+5 Radha 60
+[u1819302@inhydilpunix ~]$ awk '{print}' scores.txt
+Roll No Name Score
+1 Raghu 80
+2 Hari 50
+3 Ram 80
+4 Asha 40
+5 Radha 60
+[u1819302@inhydilpunix ~]$ awk 'BEGIN{s=0}{s=s+3;}END{print s}' scores
+18
+[u1819302@inhydilpunix ~]$ awk 'BEGIN{s=0}{s=s+$3;}END{print s}' score
+310
+[u1819302@inhydilpunix ~]$ awk '{print $1-$3}' scores.txt
+0
+-79
+-48
+-77
+-36
+-55
+[u1819302@inhydilpunix ~]$ awk 'BEGIN{s=0}{s=s+$3;}END{print s}' score
+310
+[u1819302@inhydilpunix ~]$ ^C
+[u1819302@inhydilpunix ~]$ sed 's/tcs/wipro' one.txt
+sed: -e expression #1, char 11: unterminated `s' command
+[u1819302@inhydilpunix ~]$ sed 's/tcs/wipro/' one.txt
+qwertyuiop
+TCS is a company
+INFOSYS is a company
+[u1819302@inhydilpunix ~]$ sed 's/TCS/wipro/' one.txt
+qwertyuiop
+wipro is a company
+INFOSYS is a company
+[u1819302@inhydilpunix ~]$ vi details.txt
+[u1819302@inhydilpunix ~]$ cat details.txt
+First Name,Last Name,Contact
+Atul,Sharma,9012334123
+Rina,Barua,8012389167
+Parna,Roy,9102367190
+Robin,Dutta,8120490123
+Payal,Sharma,7890123019
+[u1819302@inhydilpunix ~]$ awk 'NR == 1,NR == 3 {print $0}' details.tx
+First Name,Last Name,Contact
+Atul,Sharma,9012334123
+Rina,Barua,8012389167
+[u1819302@inhydilpunix ~]$ awk 'NR == 1,NR == 5 {print $0}' details.tx
+First Name,Last Name,Contact
+Atul,Sharma,9012334123
+Rina,Barua,8012389167
+Parna,Roy,9102367190
+Robin,Dutta,8120490123
+[u1819302@inhydilpunix ~]$ awk 'NR == 0,NR == 3 {print $0}' details.tx
+[u1819302@inhydilpunix ~]$ awk 'NR == 1,NR == 5 {print $0}' details.tx
+First Name,Last Name,Contact
+Atul,Sharma,9012334123
+Rina,Barua,8012389167
+Parna,Roy,9102367190
+Robin,Dutta,8120490123
+[u1819302@inhydilpunix ~]$ awk 'NR == 1,NR == 3 {print $0}' details.tx
+First Name,Last Name,Contact
+Atul,Sharma,9012334123
+Rina,Barua,8012389167
+[u1819302@inhydilpunix ~]$ ^C
+[u1819302@inhydilpunix ~]$ awk 'NR == 1,NR == 3 {print $1}' details.tx
+First
+Atul,Sharma,9012334123
+Rina,Barua,8012389167
+[u1819302@inhydilpunix ~]$ awk 'NR == 1,NR == 3 {print $0}' details.tx
+First Name,Last Name,Contact
+Atul,Sharma,9012334123
+Rina,Barua,8012389167
+[u1819302@inhydilpunix ~]$ awk '{print}' one.txt
+qwertyuiop
+TCS is a company
+INFOSYS is a company
+[u1819302@inhydilpunix ~]$ awk '{if($3 == "n") print $0}' one.txt
+[u1819302@inhydilpunix ~]$ awk '{if($3 == "T") print $0}' one.txt
+[u1819302@inhydilpunix ~]$ awk '{if($1 == "T") print $0}' one.txt
+[u1819302@inhydilpunix ~]$ awk '{if($1 == "T") print $0;}' one.txt
+[u1819302@inhydilpunix ~]$ awk -F "," '{print "Name:" $1" "$2"\n""Contact:"$3}' details.txt
+Name:First Name Last Name
+Contact:Contact
+Name:Atul Sharma
+Contact:9012334123
+Name:Rina Barua
+Contact:8012389167
+Name:Parna Roy
+Contact:9102367190
+Name:Robin Dutta
+Contact:8120490123
+Name:Payal Sharma
+Contact:7890123019
+[u1819302@inhydilpunix ~]$ awk "," '{print "Name:" $1" "$2"\n""Contact:"$3}' details.txt
+awk: cmd. line:1: ,
+awk: cmd. line:1: ^ syntax error
+[u1819302@inhydilpunix ~]$ awk -F "," '{print "Name:" $1" "$2"\n""Contact:"$3}' details.txt
+Name:First Name Last Name
+Contact:Contact
+Name:Atul Sharma
+Contact:9012334123
+Name:Rina Barua
+Contact:8012389167
+Name:Parna Roy
+Contact:9102367190
+Name:Robin Dutta
+Contact:8120490123
+Name:Payal Sharma
+Contact:7890123019
+[u1819302@inhydilpunix ~]$
+===============
+Greater than or not
+#!/bin/bash
+n=$1
+if [ $n > 10 ] ;
+then
+   echo "Greater than 10"
+else
+   echo "Less than 10"
+fi
+==============
+Greet according to time
+#!bin/sh
+a=`date|cut -c12-13`
+read name
+read -p "Your Name is: "$name
+if [ $a -lt 12 ];
+then
+echo "Good Morning,$name"
+elif [ $a -ge 12 -a $a -le 16 ];
+then
+echo "Good Afternoon,$name"
+elif [ $a -gt 16 ];
+then
+echo "Good Night,$name"
+fi
+===============
+adding two integers
+#!/bin/bash
+a=$1
+b=$2
+sum=$(($a + $b))
+echo $sum
+================
