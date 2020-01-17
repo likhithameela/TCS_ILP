@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    ToastMasters[] t = new ToastMasters[5];        
+        Scanner sc = new Scanner(System.in);
+        
+        for(int i = 0;i<t.length;i++)
+        {
+            int id = sc.nextInt();sc.nextLine();
+            String location = sc.nextLine();
+            String type = sc.nextLine();
+            int NoOfEvents = sc.nextInt();
+            int NoOfYears =  sc.nextInt();
+            t[i] = new ToastMasters(id,location,type,NoOfEvents,NoOfYears);
+        }
+        sc.nextLine();
+        String loc = sc.nextLine();
+        System.out.println("Total Count of "+loc+" : "+specificLocationCount(t,loc));
+        ToastMasters t1[] = updateType(t);    
+        for(int i=0;i<t1.length;i++)
+            System.out.println(t1[i].getId()+"  "+t1[i].getLocation()+"  "+t1[i].getType());
+    }
+    
+    public static int specificLocationCount(ToastMasters[] t,String loc)
+    {
+        //implement the method
+    }
+    
+    public static ToastMasters[] updateType(ToastMasters[] t)
+    {
+        //implement the method
+    }
+}
